@@ -1,0 +1,108 @@
+:root {
+    --navy: #13273f;
+    --wine: #4e0000;
+    --pearl: #e9d4c3;
+    --steel: #7a8ca5;
+    --muted: #9aaac0;
+    --red: #d61f2d;
+    --line: rgba(233, 212, 195, 0.2);
+}
+
+/* Fundo da página: azul-marinho com brilho vinho no canto */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, system-ui, sans-serif;
+    color: var(--pearl);
+    background: radial-gradient(60% 35% at 0% 0%, rgba(78, 0, 0, 0.6), transparent 70%), var(--navy);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Busca em pílula */
+.searchbar input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--pearl);
+    font: 500 1.05rem Inter, system-ui, sans-serif;
+}
+
+.searchbar input::placeholder {
+    color: var(--muted);
+}
+
+/* Painel de filtros */
+.filterpanel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.lbl {
+    margin: 0 0 0.5rem 0.25rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+.seg {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.chip {
+    min-height: 44px;
+    padding: 0.6rem 1.25rem;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--pearl);
+    font: 700 1rem Inter, system-ui, sans-serif;
+    cursor: pointer;
+}
+
+.chip:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.chip.on {
+    background: var(--red);
+    color: #fff;
+}
+
+.chip.clear {
+    border: 1px solid var(--line);
+}
+
+.filter-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.searchbar input:focus-visible,
+.chip:focus-visible {
+    outline: 2px solid var(--pearl);
+    outline-offset: 2px;
+}
